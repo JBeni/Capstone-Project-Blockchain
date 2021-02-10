@@ -81,7 +81,7 @@ contract('Token', ([deployer, receiver]) => {
             });
 
             it('rejects invalid recipients', async () => {
-                await token.transfer(0x0, amount, { from: deployer }).should.be.rejectedWith(EVM_REVERT);
+                await token.transfer(0x0, amount, { from: deployer }).should.be.rejected;
             });
         });
 
