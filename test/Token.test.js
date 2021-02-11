@@ -163,6 +163,4 @@ contract('Token', ([deployer, receiver, exchange]) => {
             });
         });
     });
-
-
 });
