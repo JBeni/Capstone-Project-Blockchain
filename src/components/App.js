@@ -18,6 +18,8 @@ class App extends React.Component {
   }
 
   async loadBlockchainData(dispatch) {
+    window.ethereum.enable();
+    window.ethereum.enable();
     const web3 = await loadWeb3(dispatch);
     await web3.eth.net.getNetworkType();
     const networkId = await web3.eth.net.getId();
