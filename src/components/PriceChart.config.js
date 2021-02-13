@@ -59,7 +59,7 @@ export const chartOptions = {
       rotate: 0,
     }
   }
-}
+};
 
 export const dummyData = [
   {

@@ -1,14 +1,14 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Tabs, Tab } from 'react-bootstrap'
-import Spinner from './Spinner'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Tabs, Tab } from 'react-bootstrap';
+import Spinner from './Spinner';
 import {
   loadBalances,
   depositEther,
   depositToken,
   withdrawEther,
   withdrawToken
-} from '../store/interactions'
+} from '../store/interactions';
 import {
   exchangeSelector,
   tokenSelector,
@@ -23,13 +23,14 @@ import {
   etherWithdrawAmountSelector,
   tokenDepositAmountSelector,
   tokenWithdrawAmountSelector,
-} from '../store/selectors'
+} from '../store/selectors';
 import {
   etherDepositAmountChanged,
   etherWithdrawAmountChanged,
   tokenDepositAmountChanged,
   tokenWithdrawAmountChanged,
-} from '../store/actions'
+} from '../store/actions';
+
 const showForm = (props) => {
   const {
     dispatch,
@@ -45,7 +46,7 @@ const showForm = (props) => {
     tokenDepositAmount,
     etherWithdrawAmount,
     tokenWithdrawAmount
-  } = props
+  } = props;
 
   return(
     <Tabs defaultActiveKey="deposit" className="bg-dark text-white">
@@ -183,13 +184,13 @@ const showForm = (props) => {
 }
 
 class Balance extends React.Component {
-  componentWillMount() {
-    this.loadBlockchainData()
+  componentDidMount() {
+    this.loadBlockchainData();
   }
 
   async loadBlockchainData() {
-    const { dispatch, web3, exchange, token, account } = this.props
-    await loadBalances(dispatch, web3, exchange, token, account)
+    const { dispatch, web3, exchange, token, account } = this.props;
+    await loadBalances(dispatch, web3, exchange, token, account);
   }
 
   render() {
@@ -203,11 +204,11 @@ class Balance extends React.Component {
         </div>
       </div>
     )
-  }
+  };
 }
 
 function mapStateToProps(state) {
-  const balancesLoading = balancesLoadingSelector(state)
+  const balancesLoading = balancesLoadingSelector(state);
 
   return {
     account: accountSelector(state),
@@ -224,7 +225,7 @@ function mapStateToProps(state) {
     etherWithdrawAmount: etherWithdrawAmountSelector(state),
     tokenDepositAmount: tokenDepositAmountSelector(state),
     tokenWithdrawAmount: tokenWithdrawAmountSelector(state),
-  }
+  };
 }
 
-export default connect(mapStateToProps)(Balance)
+export default connect(mapStateToProps)(Balance);
