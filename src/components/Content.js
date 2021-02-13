@@ -9,7 +9,7 @@ import PriceChart from './PriceChart';
 import Balance from './Balance';
 import NewOrder from './NewOrder';
 
-class Content extends Component {
+class Content extends React.Component {
   componentDidMount() {
     this.loadBlockchainData(this.props);
   }
