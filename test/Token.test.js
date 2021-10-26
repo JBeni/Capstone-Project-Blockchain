@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { tokens, EVM_REVERT } from './helpers';
 
 const Token = artifacts.require('./Token');

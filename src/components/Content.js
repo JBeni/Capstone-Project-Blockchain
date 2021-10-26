@@ -10,38 +10,38 @@ import Balance from './Balance';
 import NewOrder from './NewOrder';
 
 class Content extends React.Component {
-  componentDidMount() {
-    this.loadBlockchainData(this.props);
-  }
+	componentDidMount() {
+		this.loadBlockchainData(this.props);
+	}
 
-  async loadBlockchainData(props) {
-    const { dispatch, exchange } = props;
-    await loadAllOrders(exchange, dispatch);
-    await subscribeToEvents(exchange, dispatch);
-  }
+	async loadBlockchainData(props) {
+		const { dispatch, exchange } = props;
+		await loadAllOrders(exchange, dispatch);
+		await subscribeToEvents(exchange, dispatch);
+	}
 
-  render() {
-    return (
-      <div className="content">
-        <div className="vertical-split">
-          <Balance />
-          <NewOrder />
-        </div>
-        <OrderBook />
-        <div className="vertical-split">
-          <PriceChart />
-          <MyTransactions />
-        </div>
-        <Trades />
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div className="content">
+				<div className="vertical-split">
+					<Balance />
+					<NewOrder />
+				</div>
+				<OrderBook />
+				<div className="vertical-split">
+					<PriceChart />
+					<MyTransactions />
+				</div>
+				<Trades />
+			</div>
+		);
+	}
 }
 
 function mapStateToProps(state) {
-  return {
-    exchange: exchangeSelector(state)
-  };
+	return {
+		exchange: exchangeSelector(state),
+	};
 }
 
 export default connect(mapStateToProps)(Content);
