@@ -15,7 +15,7 @@
 		"react-dom": "^17.0.1",
 		"react-scripts": "5.0.1",
 		"web-vitals": "^1.1.0",
-		"@truffle/hdwallet-provider": "^1.1.0",
+		"@truffle/hdwallet-provider": "^2.1.15",
 		"apexcharts": "^3.6.3",
 		"babel-polyfill": "^6.26.0",
 		"babel-preset-env": "^1.7.0",
@@ -38,7 +38,7 @@
 		"redux-logger": "^3.0.6",
 		"reselect": "^4.0.0",
 		"solidity-coverage": "^0.8.2",
-		"truffle": "^5.7.3",
+		"truffle": "^5.11.5",
 		"truffle-flattener": "^1.5.0",
 		"truffle-hdwallet-provider-privkey": "^1.0.3",
 		"web3": "^1.8.1"
